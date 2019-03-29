@@ -5,5 +5,5 @@ output "bucket_name" {
 }
 
 output "source_arn" {
-	value = "${aws_s3_bucket.tf_bucket.arn}"
+  value = "${aws_s3_bucket.tf_bucket.arn}"
 }

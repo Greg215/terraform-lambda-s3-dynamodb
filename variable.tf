@@ -11,7 +11,6 @@ variable "partition_key" {}
 
 variable "sort_key" {}
 
-
 # variable for lambda
 variable "function_name" {}
 
@@ -25,10 +24,10 @@ variable "file_name" {}
 
 #variable "source_arn" {}
 
-
 # variable for s3
 variable "project_name" {}
 
 variable "tag_bucket_name" {}
 
 #variable "lambda_arn" {}
+

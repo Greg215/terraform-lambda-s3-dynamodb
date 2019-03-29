@@ -8,15 +8,15 @@ resource "aws_s3_bucket" "tf_bucket" {
   bucket        = "${var.project_name}-${random_id.tf_bucket_id.dec}"
   acl           = "private"
   force_destroy = true
-  
+
   tags {
     Name = "${var.tag_bucket_name}"
   }
-  
+
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
-        sse_algorithm     = "AES256"
+        sse_algorithm = "AES256"
       }
     }
   }

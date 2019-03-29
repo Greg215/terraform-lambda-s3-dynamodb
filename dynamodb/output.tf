@@ -1,7 +1,5 @@
 # dynamodb output
 
 output "table_name" {
-	value = "${aws_dynamodb_table.dynamodb-table.id}"
+  value = "${aws_dynamodb_table.dynamodb-table.id}"
 }
-
-
