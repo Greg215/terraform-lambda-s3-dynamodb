@@ -4,7 +4,7 @@ provider "aws" {
   region = "${var.aws_region}"
 }
 
-#----- s3 module -------------
+#----- s3 module -----------------------------
 module "s3" {
   source          = "./s3"
   project_name    = "${var.project_name}"
@@ -12,7 +12,7 @@ module "s3" {
   lambda_arn      = "${module.lambda.resource_name}"
 }
 
-#----- dynamodb module -------
+#----- dynamodb module -----------------------
 module "dynamodb" {
   source        = "./dynamodb"
   table_name    = "${var.table_name}"
@@ -22,7 +22,7 @@ module "dynamodb" {
   sort_key      = "${var.sort_key}"
 }
 
-#------ lambda module -------
+#------ lambda module -------------------------
 module "lambda" {
   source           = "./lambda"
   function_name    = "${var.function_name}"

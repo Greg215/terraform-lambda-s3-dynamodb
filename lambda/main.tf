@@ -1,3 +1,4 @@
+#------ create the iam role -------------------
 resource "aws_iam_role" "iam_for_lambda" {
   name = "iam_for_lambda"
 
@@ -18,6 +19,7 @@ resource "aws_iam_role" "iam_for_lambda" {
 EOF
 }
 
+#-------create the role policy ----------------
 resource "aws_iam_policy" "policy" {
   name        = "greg-test-policy"
   description = "policy for s3 dynamodb and lambda"
@@ -46,6 +48,7 @@ resource "aws_iam_policy" "policy" {
 EOF
 }
 
+#--------attach the policy to role --------------------
 resource "aws_iam_role_policy_attachment" "policy-attach" {
   role       = "${aws_iam_role.iam_for_lambda.name}"
   policy_arn = "${aws_iam_policy.policy.arn}"
@@ -57,6 +60,7 @@ data "archive_file" "zip" {
   output_path = "${var.output_file_name}"
 }
 
+#----- create the lambda function ------------
 resource "aws_lambda_permission" "allow_bucket" {
   statement_id  = "AllowExecutionFromS3Bucket"
   action        = "lambda:InvokeFunction"

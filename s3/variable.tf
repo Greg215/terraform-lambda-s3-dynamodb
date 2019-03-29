@@ -1,4 +1,4 @@
-# variables of s3
+#----- variables of s3-------
 
 variable "project_name" {}
 

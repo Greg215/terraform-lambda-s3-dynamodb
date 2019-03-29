@@ -1,3 +1,4 @@
+#---- main code of dynamodb ----------
 resource "aws_dynamodb_table" "dynamodb-table" {
   name           = "${var.table_name}"
   billing_mode   = "PROVISIONED"

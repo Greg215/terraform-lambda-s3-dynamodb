@@ -1,4 +1,4 @@
-# variables of lambda
+#----- variables of lambda----
 
 variable "function_name" {}
 
